@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}MangaLive{% endblock %}
+{% block content %}
+<div class="ShopContent">
+  <h1>Каталог</h1>
+  <p>Манга:Поднятие уровня в одиночку</p><img src="{% static 'main/img/Leveling.png' %}">
+  <a href="{% url 'Shop' %}"><button class="btn btn-warning">Купить</button></a>
+</div>
+{% endblock %}
