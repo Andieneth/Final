@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавить мангу{% endblock %}
+{% block content %}
+  <div class="MangaContent">
+      <h1>Формочка</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ Form.title }}<br>
+        {{ Form.Text }}<br>
+        {{ Form.price }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type="submit">Добавить мангу</button>
+    </form>
+  </div>
+{% endblock %}

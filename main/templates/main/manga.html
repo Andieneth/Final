@@ -3,8 +3,8 @@
 {% block title %}MangaLive{% endblock %}
 {% block content %}
   <div class="MangaContent">
-    <h1>Добро пожаловать на сайт MangaLive</h1>
+    <h1>{{ title }}</h1>
     <p>Предлагаю перейти в наш каталог для ознакомления с нашим товаром</p>
-    <a href="{% url 'Shop' %}"><button class="btn btn-warning">Перейти к покупкам</button></a>
+    <a href="{% url 'about' %}"><button class="btn btn-warning">Перейти к покупкам</button></a>
   </div>
 {% endblock %}

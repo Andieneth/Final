@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавить мангу{% endblock %}
+{% block content %}
+  <div class="MangaContent">
+    <h1>{{MangaArticle.title}}</h1>
+    <p>{{MangaArticle.Text}}</p>
+    <p>Цена:{{MangaArticle.price}}</p>
+    <a href="{% url 'Shop_update' MangaArticle.id %}" class="btn btn-info">Изменить</a>
+    <a href="{% url 'Shop_delete' MangaArticle.id %}" class="btn btn-danger">Удалить</a>
+  </div>
+{% endblock %}

@@ -75,3 +75,27 @@ main .ShopContent{
     text-align:left;
     width: 75%;
 }
+
+.alert-primary{
+    float:left;
+    clear:both;
+    width:400px;
+    margin:20px 34%;
+    text-align:left;
+}
+
+.alert-warning {
+    float:left;
+    clear:both;
+    width:400px;
+    margin:20px 34%;
+    text-align:left;
+    background:aqua;
+}
+
+
+form{
+    margin-left: 32%;
+    width:500px;
+    margin-top:50px;
+}

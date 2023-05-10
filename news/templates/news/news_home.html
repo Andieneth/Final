@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Новости{% endblock %}
+{% block content %}
+  <div class="MangaContent">
+    <h1>Новости</h1>
+    {% if news %}
+      {% for i in news%}
+        <div class="alert alert-warning">
+          <h3>{{i.title}}</h3>
+          <p>{{i.anons}}</p>
+          <a href="{% url 'news-detail' i.id %}" class="btn btn-warning">Раскрыть тему</a>
+        </div>
+      {%endfor%}
+    {% else %}
+      <p>Пока нет записей,но они скоро будут :3</p>
+    {% endif %}
+  </div>
+{% endblock %}

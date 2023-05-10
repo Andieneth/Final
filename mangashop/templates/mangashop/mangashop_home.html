@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Наши товары{% endblock %}
+{% block content %}
+  <div class="MangaContent">
+    <h1>Каталог</h1>
+    {% if Manga %}
+      {% for i in Manga %}
+        <div class="alert alert-primary">
+          <h3>{{i.title}}</h3>
+          <p>Цена: {{i.price}}</p>
+          <a href="{% url 'Shop_detail' i.id %}" class="btn btn-warning">Инфо</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>У нас пока что нет манги</p>
+    {% endif %}
+  </div>
+{% endblock %}

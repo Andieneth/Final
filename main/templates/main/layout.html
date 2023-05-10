@@ -21,8 +21,11 @@
             <li href=""><i class="fa-brands fa-shopify"></i>Магазин</li>
             <li href=""><i class="fa-solid fa-phone"></i>Поддержка</li> -->
             <a href="{% url 'Home' %}"><li></i>Главная</li></a>
-            <a href="{% url 'Shop' %}"><li></i>Магазин</li></a>
-            <a href=""><li></i>Поддержка</li></a>
+            <a href="{% url 'mangashop_home' %}"><li></i>Магазин</li></a>
+            <a href="{% url 'news_home' %}"><li></i>Новости</li></a>
+            <a href="{% url 'about' %}"><li></i>О нас</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить статейку</button></li></a>
+            <a href="{% url 'createmanga' %}"><li><button class="btn btn-success"><i class="fas fa-plus-circle"></i>Добавить мангу</button></li></a>
         </ul>
     </aside>
     <main>
