@@ -4,6 +4,22 @@
 {% block content %}
   <div class="MangaContent">
     <h1>Каталог</h1>
+
+    <form action="{% url 'mangashop_home' %}" method="get">
+      <p>Включить сортировку по цене ?(Впиши Да)</p>
+      <input type="text" placeholder="sort" aria-label="sort" name="sort">
+    </form>
+
+    <form action="{% url 'mangashop_home' %}" method="get">
+      <p>Цена от:</p>
+      <input type="text" placeholder="filtersbI" aria-label="filtersbI" name="filtersbI">
+    </form>
+
+    <form action="{% url 'mangashop_home' %}" method="get">
+      <p>Поиск</p>
+      <input type="text" placeholder="search" aria-label="search" name="search">
+      <button class="btn btn-outline-success" type="Submit">Search</button>
+    </form>
     {% if Manga %}
       {% for i in Manga %}
         <div class="alert alert-primary">

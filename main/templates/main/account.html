@@ -1,0 +1,27 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+<div class="MangaContent">
+  <h1>Аккаунт</h1>
+  {% if user.is_authenticated %}
+    <p>Добро пожаловать {{ user.username }}!</p>
+    <p>Здесь находится инфа о твоём акке</p>
+    <p><a href="{% url 'logout' %}">Выйти из аккаунта</a></p>
+    <h2>Корзина</h2>
+    {% if products %}
+      <a href="{% url 'buy_order' %}" class="btn btn-success">Купить</a>
+    {% endif %}
+    {% for product in products %}
+      <ul>
+        <li>
+          <p>{{ product.title }} {{ product.price }} рублей</p><a href="{% url 'remove_from_cart' product.id %}">Убрать из корзины</a>
+        </li>
+      </ul>
+      {% empty %}
+      <p>Пусто</p>
+    {% endfor %}
+  {% else %}
+    <p>Вы не вошли в свой аккаунт! <a href="{% url 'login' %}">Войти</a></p>
+  {% endif %}
+</div>
+{% endblock %}

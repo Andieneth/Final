@@ -26,6 +26,13 @@
             <a href="{% url 'about' %}"><li></i>О нас</li></a>
             <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить статейку</button></li></a>
             <a href="{% url 'createmanga' %}"><li><button class="btn btn-success"><i class="fas fa-plus-circle"></i>Добавить мангу</button></li></a>
+            {% if user.is_authenticated %}
+                <li>User: {{ user.get_username }}</li>
+                <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+            {% endif %}
+            <a href="{% url 'Account' %}"><li></i>Аккаунт</li></a>
         </ul>
     </aside>
     <main>
